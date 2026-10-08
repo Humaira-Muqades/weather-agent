@@ -8,7 +8,7 @@ reads the data and writes a short report, and the interface draws an interactive
 I built the agent loop by hand, without an agent framework, to understand exactly how
 tool calling works underneath libraries like LangGraph or smolagents.
 
-**▶ Live demo:** [huggingface.co/spaces/YOUR-USERNAME/weather-agent](https://huggingface.co/spaces/YOUR-USERNAME/weather-agent)
+**▶ Live demo:** coming soon on Hugging Face Spaces
 
 ![Weather & Air Quality Agent demo](Screenshot.png)
 
@@ -61,7 +61,7 @@ each tool should **and should not** be used.
 ## Run it yourself
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/weather-agent.git
+git clone https://github.com/Humaira-Muqades/weather-agent.git
 cd weather-agent
 python -m venv .venv
 # Windows: .venv\Scripts\activate    macOS/Linux: source .venv/bin/activate
