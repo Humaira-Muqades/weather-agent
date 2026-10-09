@@ -8,7 +8,7 @@ reads the data and writes a short report, and the interface draws an interactive
 I built the agent loop by hand, without an agent framework, to understand exactly how
 tool calling works underneath libraries like LangGraph or smolagents.
 
-**▶ Live demo:** coming soon on Hugging Face Spaces
+**▶ Live demo:** coming soon. Meanwhile, see the screenshot below or run it yourself in 5 minutes.
 
 ![Weather & Air Quality Agent demo](Screenshot.png)
 
@@ -91,7 +91,7 @@ To run fully offline with [Ollama](https://ollama.com/) instead, set `PROVIDER=o
 
 ## Deploy it online (free)
 
-The live demo runs on [Render](https://render.com/)'s free plan, configured by
+The app is ready to deploy on [Render](https://render.com/)'s free plan, configured by
 [`render.yaml`](render.yaml). To deploy your own copy: fork this repo, then in Render choose
 **New → Blueprint**, connect the repo, and paste your `GEMINI_API_KEY` when asked.
 Render installs `requirements.txt`, runs `python app.py`, and redeploys after every push.
