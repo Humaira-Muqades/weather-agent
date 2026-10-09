@@ -8,7 +8,7 @@ reads the data and writes a short report, and the interface draws an interactive
 I built the agent loop by hand, without an agent framework, to understand exactly how
 tool calling works underneath libraries like LangGraph or smolagents.
 
-**▶ Live demo:** coming soon. Meanwhile, see the screenshot below or run it yourself in 5 minutes.
+ See the screenshot below or run it yourself in 5 minutes.
 
 ![Weather & Air Quality Agent demo](Screenshot.png)
 
@@ -121,10 +121,7 @@ render.yaml        deployment settings for Render
 - **Chart honestly.** Temperature and rain chance are separate panels rather than one chart with two y-axes, and AQI colours always come with a text label.
 - **Keep secrets out of code.** The API key lives in `.env`, which `.gitignore` keeps off GitHub.
 
-## Next steps
 
-- Write a small evaluation set to measure how often the agent picks the right tool and arguments
-- Add a fallback model, so the demo keeps working if one model stops answering
 
 ## Credits
 
