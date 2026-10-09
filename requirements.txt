@@ -1,5 +1,5 @@
-openai
-requests
-python-dotenv
-gradio
-plotly
+openai>=3.26,<4
+requests>=2.34,<3
+python-dotenv>=1.2,<2
+gradio>=6.29,<7
+plotly>=7.1,<8

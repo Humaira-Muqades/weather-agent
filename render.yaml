@@ -1,0 +1,19 @@
+# Render Blueprint: tells Render how to build and run this app.
+# Render reads this file when you choose  New > Blueprint  and connect this GitHub repo.
+services:
+  - type: web
+    name: weather-agent
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    autoDeployTrigger: commit        # redeploy automatically after every push to GitHub
+    envVars:
+      - key: GEMINI_API_KEY          # secret: Render asks you to paste it during setup
+        sync: false
+      - key: MODEL
+        value: gemini-3-flash-preview
+      - key: TZ                      # so "today" and "Friday" follow Pakistan time
+        value: Asia/Karachi
+      - key: GRADIO_ANALYTICS_ENABLED
+        value: "False"

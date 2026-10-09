@@ -12,9 +12,13 @@ Run locally:
     pip install -r requirements.txt
     python app.py
 Then open  http://127.0.0.1:7860  in your browser.
+
+Online, Render runs the same command (see render.yaml). It sets the PORT environment
+variable, which tells this file to accept connections from the internet on that port.
 """
 
 import json
+import os
 
 import gradio as gr
 
@@ -132,4 +136,10 @@ demo = gr.ChatInterface(
 )
 
 if __name__ == "__main__":
-    demo.launch(theme=gr.themes.Soft())
+    port = os.getenv("PORT")
+    if port:
+        # Hosted (e.g. on Render): listen on all network interfaces at the given port.
+        demo.launch(theme=gr.themes.Soft(), server_name="0.0.0.0", server_port=int(port))
+    else:
+        # On your own computer: only reachable from this machine, at http://127.0.0.1:7860
+        demo.launch(theme=gr.themes.Soft())

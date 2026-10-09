@@ -89,6 +89,15 @@ python weather_agent.py  # chat in the terminal
 To run fully offline with [Ollama](https://ollama.com/) instead, set `PROVIDER=ollama` and
 `MODEL=llama3.1:8b` in `.env`.
 
+## Deploy it online (free)
+
+The live demo runs on [Render](https://render.com/)'s free plan, configured by
+[`render.yaml`](render.yaml). To deploy your own copy: fork this repo, then in Render choose
+**New → Blueprint**, connect the repo, and paste your `GEMINI_API_KEY` when asked.
+Render installs `requirements.txt`, runs `python app.py`, and redeploys after every push.
+Free services sleep after 15 minutes without visitors, so the first visit after a pause
+takes about a minute to load.
+
 ## Project structure
 
 ```
@@ -96,7 +105,9 @@ weather_agent.py   the agent: both tools, their descriptions, the agent loop, te
 app.py             web chat interface (Gradio): tool-call panels and charts
 charts.py          interactive Plotly charts for weather and air quality
 find_model.py      tests which Gemini models are currently answering
-requirements.txt   Python dependencies
+requirements.txt   Python dependencies (version ranges, so updates can't break the demo)
+render.yaml        deployment settings for Render
+.python-version    Python version used online
 ```
 
 ## What I learned
